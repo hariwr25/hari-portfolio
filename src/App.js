@@ -6,7 +6,6 @@ import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Background from './components/Background';
 
 function App() {
   useEffect(() => {
@@ -27,7 +26,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white relative">
-      <Background />
       <Navbar />
       <Hero />
       <About />
