@@ -41,7 +41,7 @@ const Hero = () => {
             </p>
             
             <p className="text-white/80 leading-relaxed animate-slide-left delay-300">
-              Saya adalah seorang <span className="text-white font-semibold">Freshgraduate S1 Teknologi Informasi</span> 
+              Saya adalah seorang <span className="text-white font-semibold">Lulusan S1 Teknologi Informasi </span> 
               dari <span className="text-white font-semibold">Universitas Muhammadiyah Yogyakarta</span> dengan 
               passion mendalam di dunia pengembangan web. Berpengalaman dalam membangun aplikasi 
               web modern menggunakan <span className="text-white">Laravel, Node.js, React.js, dan Vue.js </span> 
