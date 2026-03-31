@@ -10,7 +10,7 @@ import Loader from './components/Loader';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     // Smooth scroll untuk anchor links
@@ -27,25 +27,65 @@ function App() {
       });
     });
 
-    // Simulasi loading
-    const timer = setTimeout(() => {
-      setFadeOut(true);
-      setTimeout(() => setLoading(false), 500); // Hapus loader setelah fade out
-    }, 2000);
+    // Fungsi untuk menunggu semua gambar dan konten selesai dimuat
+    const waitForContentToLoad = async () => {
+      // Ambil semua gambar di halaman
+      const images = document.querySelectorAll('img');
+      const totalImages = images.length;
+      let loadedImages = 0;
 
-    return () => clearTimeout(timer);
+      // Update progress awal
+      setProgress(10);
+
+      // Jika tidak ada gambar, langsung lanjut
+      if (totalImages === 0) {
+        setProgress(100);
+        setTimeout(() => setLoading(false), 500);
+        return;
+      }
+
+      // Load setiap gambar
+      const imagePromises = Array.from(images).map((img) => {
+        return new Promise((resolve) => {
+          if (img.complete) {
+            loadedImages++;
+            setProgress(10 + Math.floor((loadedImages / totalImages) * 90));
+            resolve();
+          } else {
+            img.addEventListener('load', () => {
+              loadedImages++;
+              setProgress(10 + Math.floor((loadedImages / totalImages) * 90));
+              resolve();
+            });
+            img.addEventListener('error', () => {
+              loadedImages++;
+              setProgress(10 + Math.floor((loadedImages / totalImages) * 90));
+              resolve();
+            });
+          }
+        });
+      });
+
+      // Tunggu semua gambar selesai dimuat
+      await Promise.all(imagePromises);
+      
+      // Beri jeda kecil untuk memastikan semua konten terrender
+      setTimeout(() => {
+        setProgress(100);
+        setTimeout(() => setLoading(false), 500);
+      }, 300);
+    };
+
+    // Jalankan fungsi loading
+    waitForContentToLoad();
   }, []);
 
   if (loading) {
-    return (
-      <div className={`transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
-        <Loader />
-      </div>
-    );
+    return <Loader progress={progress} />;
   }
 
   return (
-    <div className="min-h-screen bg-black text-white relative animate-fade-in">
+    <div className="min-h-screen bg-black text-white relative">
       <Navbar />
       <Hero />
       <About />
