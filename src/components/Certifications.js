@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCertificate, FaGlobe, FaNetworkWired, FaAward, FaCalendarAlt, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaCertificate, FaAward, FaCalendarAlt, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiCisco, SiJavascript } from 'react-icons/si';
 
 const Certifications = () => {

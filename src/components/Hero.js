@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiArrowDown, FiGithub, FiLinkedin, FiMail, FiCode, FiAward, FiBriefcase, FiCpu, FiBookOpen } from 'react-icons/fi';
+import { FiArrowDown, FiCode, FiAward, FiBriefcase, FiCpu, FiBookOpen } from 'react-icons/fi';
 
 const Hero = () => {
   const stats = [

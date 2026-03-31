@@ -2,9 +2,9 @@ import React from 'react';
 import { 
   FiCode, FiDatabase, FiLayout, FiTrendingUp, FiSmartphone, 
   FiZap, FiServer, FiGitBranch, FiCloud, FiBriefcase, 
-  FiCalendar, FiAward 
+  FiCalendar 
 } from 'react-icons/fi';
-import { FaCertificate, FaFileAlt } from 'react-icons/fa';
+import { FaCertificate } from 'react-icons/fa';
 import { SiJavascript, SiCisco } from 'react-icons/si';
 
 const About = () => {
