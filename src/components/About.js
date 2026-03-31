@@ -15,6 +15,7 @@ const About = () => {
     { name: "Vue.js", icon: <FiLayout />, level: 87, color: "from-green-500 to-emerald-500" },
     { name: "Node.js", icon: <FiTrendingUp />, level: 85, color: "from-green-500 to-teal-500" },
     { name: "React.js", icon: <FiCode />, level: 88, color: "from-cyan-500 to-blue-500" },
+    { name: "Express.js", icon: <FiTrendingUp />, level: 85, color: "from-green-500 to-teal-500" },
     { name: "Tailwind CSS", icon: <FiZap />, level: 92, color: "from-teal-500 to-cyan-500" },
     { name: "Bootstrap", icon: <FiSmartphone />, level: 90, color: "from-purple-500 to-indigo-500" },
     { name: "MySQL", icon: <FiDatabase />, level: 85, color: "from-blue-500 to-cyan-500" },
@@ -123,6 +124,16 @@ const About = () => {
                 ))}
               </div>
             </div>
+            <div className="glass-effect rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-4 gradient-text">Soft Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {["Problem Solving", "Team Collaboration", "Communication", "Critical Thinking", "Time Management", "Adaptability", "Creativity", "Attention to Detail", "Fast Learner", "Documentation"].map((skill, index) => (
+                  <span key={index} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all cursor-default">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
           
           {/* Right Column - Skills & Tools */}
@@ -215,16 +226,6 @@ const About = () => {
   </div>
 </div>
             
-            <div className="glass-effect rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4 gradient-text">Soft Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {["Problem Solving", "Team Collaboration", "Communication", "Critical Thinking", "Time Management", "Adaptability", "Creativity", "Attention to Detail", "Fast Learner", "Documentation"].map((skill, index) => (
-                  <span key={index} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all cursor-default">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
