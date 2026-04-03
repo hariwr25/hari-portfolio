@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hari-portfolio/static/css/main.c9019bf0.css",
+    "main.js": "/hari-portfolio/static/js/main.76eaff80.js",
+    "static/js/453.e90f4a34.chunk.js": "/hari-portfolio/static/js/453.e90f4a34.chunk.js",
+    "index.html": "/hari-portfolio/index.html",
+    "main.c9019bf0.css.map": "/hari-portfolio/static/css/main.c9019bf0.css.map",
+    "main.76eaff80.js.map": "/hari-portfolio/static/js/main.76eaff80.js.map",
+    "453.e90f4a34.chunk.js.map": "/hari-portfolio/static/js/453.e90f4a34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9019bf0.css",
+    "static/js/main.76eaff80.js"
+  ]
+}
