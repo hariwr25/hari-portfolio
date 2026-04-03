@@ -1,57 +1,29 @@
-import React, { useState } from 'react';
-import { FiMail, FiMapPin, FiPhone, FiSend, FiGithub, FiLinkedin, FiBriefcase, FiClock } from 'react-icons/fi';
+import React from 'react';
+import { FiMail, FiSend, FiLinkedin, FiMessageCircle, FiCopy } from 'react-icons/fi';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const contactInfo = [
-    { 
-      icon: <FiMail size={24} />, 
-      title: "Email", 
-      value: "hariwr25@gmail.com", 
-      link: "mailto:hariwr25@gmail.com", 
-      desc: "Kirim email untuk diskusi lebih lanjut",
-      response: "Balas dalam 24 jam"
+  const quickActions = [
+    {
+      icon: <FiMessageCircle size={24} />,
+      title: "WhatsApp Saya",
+      desc: "Respon cepat via WhatsApp",
+      link: "https://wa.me/6287724422443?text=Halo%20Hari,%20saya%20tertarik%20untuk%20berdiskusi%20dengan%20Anda.",
+      color: "hover:bg-green-500/20"
     },
-    { 
-      icon: <FiPhone size={24} />, 
-      title: "Phone", 
-      value: "+62 877 2442 2443", 
-      link: "tel:+687724422443", 
-      desc: "Senin - Jumat, 09:00 - 17:00 WIB",
-      response: "WhatsApp juga tersedia"
+    {
+      icon: <FiMail size={24} />,
+      title: "Email Langsung",
+      desc: "Kirim email langsung ke inbox",
+      link: "mailto:hariwr25@gmail.com?subject=Diskusi%20Kerjasama&body=Halo%20Hari,",
+      color: "hover:bg-blue-500/20"
     },
-    { 
-      icon: <FiMapPin size={24} />, 
-      title: "Location", 
-      value: "Yogyakarta, Indonesia", 
-      link: "#", 
-      desc: "Siap bekerja remote maupun onsite",
-      response: "Bersedia untuk relokasi"
-    },
+    {
+      icon: <FiLinkedin size={24} />,
+      title: "LinkedIn",
+      desc: "Terhubung via LinkedIn",
+      link: "https://www.linkedin.com/in/hari-wahyu-ramadhan-54707b314/",
+      color: "hover:bg-blue-500/20"
+    }
   ];
 
   return (
@@ -63,143 +35,73 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
           <p className="text-gray-400 max-w-2xl mx-auto mt-4">
-            Saya sedang mencari peluang baru untuk berkontribusi dalam proyek-proyek menarik. 
-            Mari berdiskusi dan wujudkan ide-ide Anda bersama!
+            Saya sedia untuk menangani masalah proyek tersebut, dan terbuka untuk kesempatan karir baru. 
+            Dengan pengalaman dan keahlian dalam berbagai teknologi web, saya siap membantu mewujudkan proyek Anda.
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6 animate-slide-left">
-            <div className="glass-effect rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-xl gradient-bg">
-                  <FiBriefcase className="text-white" size={24} />
-                </div>
-                <h3 className="text-2xl font-bold gradient-text">Let's Work Together</h3>
+        <div className="max-w-3xl mx-auto">
+          {/* Quick Actions - Tanpa double */}
+          <div className="glass-effect rounded-2xl p-8">
+            <div className="text-center mb-8">
+              <div className="inline-block p-4 rounded-2xl gradient-bg mb-4">
+                <FiSend className="text-white" size={32} />
               </div>
-              
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Saya selalu terbuka untuk kolaborasi, proyek freelance, atau kesempatan karir 
-baru. Dengan pengalaman dan keahlian dalam berbagai teknologi 
-                web, saya siap membantu mewujudkan proyek Anda.
+              <h3 className="text-2xl font-bold gradient-text mb-2">Mari Terhubung!</h3>
+              <p className="text-gray-400 text-sm">
+                Pilih cara termudah untuk menghubungi saya
               </p>
-              
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <a 
-                    key={index}
-                    href={info.link}
-                    className="flex items-start gap-5 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group"
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-4">
+              {quickActions.map((action, index) => (
+                <a
+                  key={index}
+                  href={action.link}
+                  target={action.link.startsWith('http') ? "_blank" : "_self"}
+                  rel={action.link.startsWith('http') ? "noopener noreferrer" : ""}
+                  className={`flex flex-col items-center gap-3 p-5 rounded-xl bg-white/5 border border-white/10 transition-all duration-300 ${action.color} hover:border-cyan-500 group text-center`}
+                >
+                  <div className="p-3 rounded-xl gradient-bg text-white group-hover:scale-110 transition-transform">
+                    {action.icon}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">{action.title}</div>
+                    <div className="text-gray-500 text-xs mt-1">{action.desc}</div>
+                  </div>
+                  <div className="text-cyan-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    Klik untuk hubungi →
+                  </div>
+                </a>
+              ))}
+            </div>
+            
+            <div className="mt-8 p-4 rounded-xl bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-white/10">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <p className="text-gray-300 text-sm">
+                    <span className="font-semibold text-cyan-400">Siap membantu!</span> Saya akan merespon dalam waktu kurang dari 24 jam.
+                  </p>
+                </div>
+                
+                {/* Email dengan tombol copy - hanya 1 kali */}
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg p-2">
+                  <FiMail className="text-cyan-400" size={14} />
+                  <code className="text-cyan-400 text-sm">hariwr25@gmail.com</code>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText('hariwr25@gmail.com');
+                      alert('Email berhasil disalin!');
+                    }}
+                    className="ml-1 px-2 py-1 text-xs bg-white/10 rounded hover:bg-white/20 transition flex items-center gap-1"
                   >
-                    <div className="p-3 rounded-xl gradient-bg text-white group-hover:scale-110 transition-transform">
-                      {info.icon}
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-semibold text-white mb-1">{info.title}</div>
-                      <div className="text-cyan-400 text-sm mb-1">{info.value}</div>
-                      <div className="text-gray-500 text-xs">{info.desc}</div>
-                      <div className="flex items-center gap-1 text-gray-600 text-xs mt-1">
-                        <FiClock size={10} />
-                        <span>{info.response}</span>
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <h4 className="text-white font-semibold mb-4">Connect with me</h4>
-                <div className="flex gap-3">
-                  <a href="https://github.com/hariwr25" className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-cyan-400 transition-all transform hover:scale-110">
-                    <FiGithub size={20} />
-                  </a>
-                  <a href="https://www.linkedin.com/in/hari-wahyu-ramadhan-54707b314/" className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-cyan-400 transition-all transform hover:scale-110">
-                    <FiLinkedin size={20} />
-                  </a>
-                  <a href="mailto:hariwr25@gmail.com" className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-cyan-400 transition-all transform hover:scale-110">
-                    <FiMail size={20} />
-                  </a>
+                    <FiCopy size={12} /> Salin
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="glass-effect rounded-2xl p-8 animate-slide-right">
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Kirim Pesan</h3>
-            
-            <div className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
-                  Nama Lengkap <span className="text-cyan-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all text-white"
-                  placeholder="Hari Wahyu Ramadhan"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-gray-300 font-medium mb-2">
-                  Email Address <span className="text-cyan-400">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all text-white"
-                  placeholder="hari@example.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-gray-300 font-medium mb-2">
-                  Pesan <span className="text-cyan-400">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all text-white resize-none"
-                  placeholder="Tulis pesan Anda di sini..."
-                />
-              </div>
-              
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-6 py-3 gradient-bg text-white rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    Mengirim...
-                  </>
-                ) : (
-                  <>
-                    Kirim Pesan <FiSend size={18} />
-                  </>
-                )}
-              </button>
-              
-              <p className="text-gray-500 text-xs text-center mt-4">
-                Saya akan membalas pesan Anda dalam waktu 1x24 jam. Terima kasih!
-              </p>
-            </div>
-          </form>
         </div>
       </div>
     </section>

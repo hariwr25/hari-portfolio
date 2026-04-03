@@ -13,7 +13,7 @@ const Hero = () => {
       id="home" 
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("/images/kaki.jpg")',
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 75%, #000 100%), url(${process.env.PUBLIC_URL + "/images/kaki.jpg"})`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'scroll',
@@ -73,7 +73,7 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-white/20 rounded-full blur-md animate-pulse-glow"></div>
                     <div className="absolute inset-0 rounded-full border-4 border-white/30 animate-ping opacity-20"></div>
                     <img
-                      src="/images/profil.jpg" 
+                      src={process.env.PUBLIC_URL + "/images/profil.jpg"} 
                       alt="Hari Wahyu Ramadhan"
                       className="w-32 h-32 rounded-full object-cover relative z-10 border-4 border-white/50 group-hover:scale-105 transition-transform duration-500"
                     />
