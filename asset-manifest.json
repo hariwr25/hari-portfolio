@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hari-portfolio/static/css/main.9618f987.css",
-    "main.js": "/hari-portfolio/static/js/main.7c3c3ebf.js",
+    "main.js": "/hari-portfolio/static/js/main.f774b8ec.js",
     "static/js/453.e90f4a34.chunk.js": "/hari-portfolio/static/js/453.e90f4a34.chunk.js",
     "index.html": "/hari-portfolio/index.html",
     "main.9618f987.css.map": "/hari-portfolio/static/css/main.9618f987.css.map",
-    "main.7c3c3ebf.js.map": "/hari-portfolio/static/js/main.7c3c3ebf.js.map",
+    "main.f774b8ec.js.map": "/hari-portfolio/static/js/main.f774b8ec.js.map",
     "453.e90f4a34.chunk.js.map": "/hari-portfolio/static/js/453.e90f4a34.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9618f987.css",
-    "static/js/main.7c3c3ebf.js"
+    "static/js/main.f774b8ec.js"
   ]
 }
