@@ -50,16 +50,7 @@ const Hero = () => {
   Saya memiliki pengalaman dalam mengembangkan berbagai project web, baik secara mandiri 
   maupun kolaborasi tim. Mulai dari aplikasi sederhana hingga sistem yang lebih kompleks, 
   saya terus belajar dan mengasah kemampuan di setiap project yang saya kerjakan.
-</p>
-
-<p className="text-white/80 leading-relaxed animate-slide-left delay-300 mt-4">
-  Saya juga telah mendapatkan beberapa sertifikasi profesional, termasuk 
-  <span className="text-white"> JavaScript International Certification</span> dan 
-  <span className="text-white"> Cisco Certified Network Associate (CCNA)</span>. 
-  Sertifikasi ini memperkuat kompetensi saya dalam pengembangan web dan pemahaman 
-  tentang infrastruktur jaringan.
-</p>
-            
+</p>      
             <div className="flex flex-wrap gap-4 animate-slide-left delay-400">
               <a href="#projects" className="px-8 py-3 bg-white text-purple-600 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 font-semibold">
                 Explore My Work 
