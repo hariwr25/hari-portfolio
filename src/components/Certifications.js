@@ -13,7 +13,7 @@ const Certifications = () => {
           credential: "2Kp5-XMzU",
           description: "Certification demonstrating proficiency in JavaScript programming including core concepts, modern syntax, and best practices.",
           skills: ["JavaScript", "ES6+", "Programming Logic", "Web Development"],
-          link: "/certificates/javascript.pdf",
+          link: "https://hariwr25.github.io/hari-portfolio/certificates/javascript.pdf",
           featured: true
         },
         {
@@ -25,7 +25,7 @@ const Certifications = () => {
           credential: "Cisco Certificate",
           description: "Certification covering networking fundamentals including network architecture, IP addressing, and basic troubleshooting.",
           skills: ["Networking", "IP Addressing", "Network Fundamentals", "Troubleshooting"],
-          link: "/certificates/ccna.pdf",
+          link: "https://hariwr25.github.io/hari-portfolio/certificates/ccna.pdf",
           featured: true
         }
       ];
