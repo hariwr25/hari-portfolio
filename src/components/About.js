@@ -79,7 +79,7 @@ const About = () => {
                 seorang Freshgraduate S1 Teknologi Informasi yang memiliki ketertarikan mendalam 
                 di dunia pengembangan web. Perjalanan saya di dunia programming dimulai sejak 
                 masa kuliah dan semakin berkembang saat menjalani internship di 
-                <span className="text-cyan-400"> TVRI Yogyakarta</span>.
+                <span className="text-gray-300"> TVRI Yogyakarta</span>.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Selama internship, saya mendapatkan pengalaman berharga dalam mengembangkan 
@@ -90,8 +90,8 @@ const About = () => {
               </p>
               <p className="text-gray-300 leading-relaxed">
                 Saya juga telah mendapatkan beberapa sertifikasi profesional, termasuk 
-                <span className="text-cyan-400"> JavaScript International Certification</span> 
-                dan <span className="text-cyan-400"> Cisco Certified Network Associate (CCNA)</span>. 
+                <span className="text-gray-300"> JavaScript International Certification</span> 
+                 dan <span className="text-gray-300"> Cisco Certified Network Associate (CCNA)</span>. 
                 Sertifikasi ini memperkuat kompetensi saya dalam pengembangan web dan pemahaman 
                 tentang infrastruktur jaringan.
               </p>
