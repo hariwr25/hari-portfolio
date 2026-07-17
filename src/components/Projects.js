@@ -1,63 +1,107 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { FaUserGraduate, FaFingerprint, FaCalendarCheck, FaUtensils, FaShoppingCart, FaFilm } from 'react-icons/fa';
+import { 
+  FaUserGraduate, 
+  FaFingerprint, 
+  FaCalendarCheck, 
+  FaUtensils, 
+  FaShoppingCart, 
+  FaFilm,
+  FaDatabase,
+  FaWarehouse
+} from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
+    // ===== PROYEK 1 =====
     {
       id: 1,
       title: "Pendaftaran PKL & Kunjungan TVRI",
-      description: "Aplikasi manajemen pendaftaran PKL dan kunjungan industri. Memudahkan proses pendaftaran, verifikasi data, dan pengelolaan jadwal kunjungan secara terintegrasi.",
+      description: "Aplikasi manajemen pendaftaran PKL dan kunjungan industri dengan verifikasi data terintegrasi.",
       image: process.env.PUBLIC_URL + "/images/registrasi.png",
       technologies: ["Vue.js", "Vue Router", "Axios", "Bootstrap", "MySQL"],
       demoLink: "https://tvri-pkl-kunjungan.vercel.app/",
       icon: <FaUserGraduate className="text-cyan-400" size={24} />,
       featured: true
     },
+    
+    // ===== PROYEK 2 =====
     {
       id: 2,
       title: "TVRI E-Kehadiran",
-      description: "Sistem absensi digital dengan pencatatan kehadiran, rekap absensi, dan monitoring pegawai secara real-time. Memudahkan pengelolaan data kehadiran.",
+      description: "Sistem absensi digital dengan rekap kehadiran dan monitoring pegawai secara real-time.",
       image: process.env.PUBLIC_URL + "/images/kehadiran.png",
       technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript", "Chart.js"],
       demoLink: "https://yogyakarta.tvri.go.id/e-kehadiran/",
       icon: <FaFingerprint className="text-purple-400" size={24} />,
       featured: true
     },
+    
+    // ===== PROYEK 3 =====
     {
       id: 3,
       title: "TVRI Cuti Pegawai",
-      description: "Aplikasi pengelolaan cuti pegawai dengan pengajuan online, approval atasan, dan histori cuti yang terintegrasi dengan data kepegawaian di TVRI Yogyakarta.",
+      description: "Aplikasi pengelolaan cuti pegawai dengan pengajuan online dan approval atasan.",
       image: process.env.PUBLIC_URL + "/images/cuti.png",
       technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript", "SweetAlert"],
       demoLink: "https://yogyakarta.tvri.go.id/pegawai/",
       icon: <FaCalendarCheck className="text-yellow-400" size={24} />,
       featured: false
     },
+    
+    // ===== PROYEK 4 =====
     {
       id: 4,
+      title: "Inventory ERP System",
+      description: "Sistem manajemen inventaris lengkap dengan stok in/out, histori transaksi, dan dashboard analitik.",
+      image: process.env.PUBLIC_URL + "/images/inventory.png",
+      technologies: ["Laravel", "Blade", "MySQL", "Chart.js", "Livewire"],
+      demoLink: "https://github.com/hariwr25/inventory-erp-system",
+      icon: <FaWarehouse className="text-emerald-400" size={24} />,
+      featured: true
+    },
+    
+    // ===== PROYEK 5 =====
+    {
+      id: 5,
+      title: "Odoo-Laravel Integration",
+      description: "Integrasi Odoo dengan Laravel menggunakan 3 database untuk sinkronisasi data bisnis secara real-time.",
+      image: process.env.PUBLIC_URL + "/images/odo.png",
+      technologies: ["Laravel", "PHP", "Odoo ERP", "PostgreSQL", "REST API"],
+      demoLink: "https://github.com/hariwr25/odoo-laravel-integration",
+      icon: <FaDatabase className="text-blue-400" size={24} />,
+      featured: true
+    },
+    
+    // ===== PROYEK 6 =====
+    {
+      id: 6,
       title: "HOOH RESTAURANT",
-      description: "Website restoran modern dengan tampilan menarik untuk menampilkan menu, galeri, dan informasi restoran. Dilengkapi sistem reservasi meja online.",
+      description: "Website restoran modern dengan tampilan menarik dan sistem reservasi meja online.",
       image: process.env.PUBLIC_URL + "/images/hooh.png",
       technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "jQuery"],
       demoLink: "https://hariwr25.github.io/HOOH_Restaurant//",
       icon: <FaUtensils className="text-green-400" size={24} />,
       featured: false
     },
+    
+    // ===== PROYEK 7 =====
     {
-      id: 5,
+      id: 7,
       title: "BELANJA GASIH",
-      description: "Platform e-commerce dengan tampilan responsif. Menampilkan berbagai produk, keranjang belanja, dan sistem checkout yang user-friendly.",
+      description: "Platform e-commerce responsif dengan keranjang belanja dan sistem checkout user-friendly.",
       image: process.env.PUBLIC_URL + "/images/belanja.png",
       technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Font Awesome"],
       demoLink: "https://hariwr25.github.io/HOOH_Restaurant//",
       icon: <FaShoppingCart className="text-orange-400" size={24} />,
       featured: false
     },
+    
+    // ===== PROYEK 8 =====
     {
-      id: 6,
+      id: 8,
       title: "A Day in My Life",
-      description: "Personal blog yang menceritakan aktivitas sehari-hari dengan desain aesthetic dan interaktif. Dilengkapi galeri foto dan catatan kegiatan sehari-hari.",
+      description: "Personal blog dengan desain aesthetic dan interaktif untuk menceritakan aktivitas sehari-hari.",
       image: process.env.PUBLIC_URL + "/images/a-day.png",
       technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "AOS Animation"],
       demoLink: "https://hariwr25.github.io/A-Day-In-MyLife/",
@@ -83,7 +127,11 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={project.id} className="animate-slide-up" style={{ animationDelay: `${index * 0.05}s` }}>
+            <div 
+              key={project.id} 
+              className="animate-slide-up h-full" 
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
               <ProjectCard project={project} />
             </div>
           ))}
