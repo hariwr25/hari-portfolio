@@ -56,7 +56,7 @@ const Projects = () => {
       description: "Sistem manajemen inventaris lengkap dengan stok in/out, histori transaksi, dan dashboard analitik.",
       image: process.env.PUBLIC_URL + "/images/inventory.png",
       technologies: ["Laravel", "Blade", "MySQL", "Chart.js", "Livewire"],
-      demoLink: "https://github.com/hariwr25/inventory-erp-system",
+      demoLink: "https://hariwr25.github.io/inventory-frontend-demo/",
       icon: <FaWarehouse className="text-emerald-400" size={24} />,
       featured: true
     },
@@ -68,7 +68,7 @@ const Projects = () => {
       description: "Integrasi Odoo dengan Laravel menggunakan 3 database untuk sinkronisasi data bisnis secara real-time.",
       image: process.env.PUBLIC_URL + "/images/odo.png",
       technologies: ["Laravel", "PHP", "Odoo ERP", "PostgreSQL", "REST API"],
-      demoLink: "https://github.com/hariwr25/odoo-laravel-integration",
+      demoLink: "https://hariwr25.github.io/odoo-laravel-integration-demo/",
       icon: <FaDatabase className="text-blue-400" size={24} />,
       featured: true
     },
