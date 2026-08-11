@@ -92,7 +92,7 @@ const Projects = () => {
       description: "Platform e-commerce responsif dengan keranjang belanja dan sistem checkout user-friendly.",
       image: process.env.PUBLIC_URL + "/images/belanja.png",
       technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Font Awesome"],
-      demoLink: "https://hariwr25.github.io/HOOH_Restaurant//",
+      demoLink: "https://hariwr25.github.io/Belanja_Gasih/",
       icon: <FaShoppingCart className="text-orange-400" size={24} />,
       featured: false
     },
